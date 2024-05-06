@@ -8,6 +8,10 @@ const PORT = process.env.PORT || 3000;
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
 
+app.get("/", (req, res) => {
+    res.end("Hello world")
+})
+
 // TODO ENDPOINTS
 app.post('/create', async (req, res) => {
     const todoBody = req.body;
