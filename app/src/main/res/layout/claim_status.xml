@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/register_background"
+    android:gravity="center"
+    android:padding="16dp"
+    android:fitsSystemWindows="true"
+    tools:context="claimstatus">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="887dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/claimnumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Claim Number:"
+            android:textSize="25sp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:layout_alignParentTop="true" />
+
+        <TextView
+
+            android:id="@+id/claimdate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Date: "
+            android:textSize="25sp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="20dp"
+            android:textColorHint="@color/white"
+            android:textColor="@color/white"
+            android:layout_alignParentTop="true" />
+
+
+        <TextView
+
+            android:id="@+id/Status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Status: "
+            android:textSize="25sp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:layout_alignParentTop="true" />
+
+
+        <Button
+
+            android:id="@+id/claimstatus_btn"
+            android:layout_width="201dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Claim Status" />
+
+
+    </LinearLayout>
+</RelativeLayout>

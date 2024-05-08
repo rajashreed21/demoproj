@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/register_background"
+    android:gravity="center"
+    android:padding="16dp"
+    android:fitsSystemWindows="true"
+    tools:context="claimfilling">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="887dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Claim Form"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:textColor="@color/black"
+            android:layout_marginBottom="24dp"/>
+
+        <EditText
+            android:id="@+id/holdername"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Policy holder name"
+            android:inputType="textMultiLine"
+            android:textColor="@color/white"
+            android:layout_marginBottom="16dp"/>
+
+        <EditText
+            android:id="@+id/incident"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Incident details"
+            android:inputType="textMultiLine"
+            android:textColor="@color/white"
+            android:layout_marginBottom="16dp"/>
+
+        <EditText
+            android:id="@+id/police"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="police report"
+            android:inputType="textMultiLine"
+            android:textColor="@color/white"
+            android:layout_marginBottom="16dp"/>
+
+        <EditText
+            android:id="@+id/injury"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Injury details"
+            android:inputType="textMultiLine"
+            android:textColor="@color/white"
+            android:layout_marginBottom="16dp"/>
+
+        <EditText
+            android:id="@+id/damage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Damage details"
+            android:inputType="textMultiLine"
+            android:textColor="@color/white"
+            android:layout_marginBottom="16dp"/>
+
+        <Button
+            android:id="@+id/buttonSubmitClaim"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Submit Claim"/>
+
+    </LinearLayout>
+</RelativeLayout>
