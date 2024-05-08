@@ -13,19 +13,31 @@ app.get("/", (req, res) => {
 })
 
 // TODO ENDPOINTS
-app.post('/create', async (req, res) => {
+app.post('/createtodo', async (req, res) => {
     const todoBody = req.body;
 
     const todo = await todos.create({
         title: todoBody.title,
         desc: todoBody.desc,
-        active: todoBody.active,
-        dateCreated: Date.now(),
-        owner: todoBody.owner,
+        time: todoBody.time,
+        
+        
     });
 
     todo ? res.status(201).json({msg: "Success", data: todo}) : res.status(500).json({msg: "Error", data: todo})
 })
+
+app.get('/tododata', async (req, res) => {
+    try {
+        // Fetch all users from the database
+        const todoData = await todos.find({});
+
+        res.json(todoData);
+    } catch (error) {
+        console.error("Error while fetching users:", error);
+        res.status(500).json({ error: "Internal server error" });
+    }
+});
 
 app.delete('/delete/:id', async (req, res) => {
     const todoId = req.params.id;
