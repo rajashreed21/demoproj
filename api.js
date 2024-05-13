@@ -83,4 +83,17 @@ app.post('/user/create', async (req, res) => {
             : res.status(500).json({msg: "Error", data: newUser})
 })
 
+app.post("/login", (req, res) => {
+    const body = req.body;
+    const email = body.email;
+    const pass = body.pass;
+
+    if(email === "raji@gmail.com" && pass === "guna07")
+        res.json({
+            data: "success",
+        })
+    else 
+        res.end("Incorrect creds")
+})
+
 app.listen(PORT, () => console.log(`Application listening on port ${PORT}!`))
