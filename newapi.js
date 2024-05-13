@@ -40,13 +40,26 @@ app.post('/status', async (req, res) => {
     status ? res.status(201).json({msg: "Success", data: status}) : res.status(500).json({msg: "Error", data: status})
 })
 
+app.get('/statusdata', async (req, res) => {
+    try {
+        // Fetch all users from the database
+        const statusdata = await trackStatus.find({});
+
+        res.json(statusdata);
+    } catch (error) {
+        console.error("Error while fetching users:", error);
+        res.status(500).json({ error: "Internal server error" });
+    }
+});
+
+
 app.post('/vehical', async (req, res) => {
     const  body= req.body;
 
     const vehical = await vehicaldetails.create({
         model: body.model,
         year: body.year,
-        photo: body.photo,
+        vehicalnumber: body.vehicalnumber,
     });
 
     vehical ? res.status(201).json({msg: "Success", data: vehical}) : res.status(500).json({msg: "Error", data: vehical})
@@ -55,7 +68,7 @@ app.post('/vehical', async (req, res) => {
 
 app.post("/login", (req, res) => {
     const body = req.body;
-    const username = body.username;
+    const email = body.email;
     const pass = body.pass;
 
     if(email === "raji@gmail.com" && pass === guna07)

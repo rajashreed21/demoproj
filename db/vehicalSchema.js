@@ -9,7 +9,7 @@ const vehicalSchema = new mongoose.Schema({
         type: Number,
     },
 
-    photo : {
+    vehicalnumber: {
         type: String,
     }
 });
