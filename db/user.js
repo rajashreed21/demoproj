@@ -4,7 +4,7 @@ const todoSchema = require("./todoSchema");
 const userSchema = require("./userSchema");
 
 const DB_NAME = process.env.DB_NAME || "todoApp";
-const URI = process.env.MONGO_URI || "mongodb://127.0.0.1:27017";
+const URI = process.env.MONGO_URI || "mongodb+srv://temp1:temp1@cluster0.btm4xmc.mongodb.net";
 const MONGO_URI = `${URI}/${DB_NAME}`;
 
 mongoose.connect(MONGO_URI).then(() => console.log("Connected")).catch((err) => console.log(err))
