@@ -12,6 +12,10 @@ app.get("/", (req, res) => {
     res.end("Hello world")
 })
 
+app.get("/hello", (req, res) => {
+    res.end("Hello world welcom all")
+})
+
 // TODO ENDPOINTS
 app.post('/createtodo', async (req, res) => {
     const todoBody = req.body;
