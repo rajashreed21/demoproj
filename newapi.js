@@ -68,7 +68,7 @@ app.post('/vehical', async (req, res) => {
 
 app.post("/login", (req, res) => {
     const body = req.body;
-    const email = body.email;
+    const username = body.username;
     const pass = body.pass;
 
     if(email === "raji@gmail.com" && pass === guna07)
