@@ -4,7 +4,7 @@ const registerSchema=new mongoose.Schema({
     holdername:{
         type:String
     },
-    vehiclenumber:{
+    vehicalnumber:{
         type:String
     },
     chassisnumber:{

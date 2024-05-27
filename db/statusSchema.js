@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const statusSchema = new mongoose.Schema({
     
-    vehiclenumber: {
+    vehicalnumber: {
         type: String,
     },
     engine: {

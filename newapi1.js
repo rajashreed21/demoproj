@@ -11,22 +11,22 @@ app.use(bodyParser.urlencoded({extended: true}))
 
 // TODO ENDPOINTS
 app.post('/Register', async(req, res) => {
-    const  {holdername,vehiclenumber,chassisnumber,insurancenumber,licensenumber}= req.body;
+    const  {holdername,vehicalnumber,chassisnumber,insurancenumber,licensenumber}= req.body;
 
     try{
-        await registerdetails.create( {holdername,vehiclenumber,chassisnumber,insurancenumber,licensenumber});
-        res.status(200).send('Vehicle registered successfully');
+        await registerdetails.create( {holdername,vehicalnumber,chassisnumber,insurancenumber,licensenumber});
+        res.status(200).send('Vehical registered successfully');
     }catch(err){
         console.error(err)
-        res.status(404).send('Vehicle already registered')
+        res.status(404).send('Vehical already registered')
     }
     
 });
 
 app.post('/status',async (req, res) => {
-    const  {vehiclenumber,engine,brake,healthstatus}= req.body;
+    const  {vehicalnumber,engine,brake,healthstatus}= req.body;
     try{
-        await trackStatus.findOneAndUpdate({vehiclenumber},{engine,brake,healthstatus},{upsert:true});
+        await trackStatus.findOneAndUpdate({vehicalnumber},{engine,brake,healthstatus},{upsert:true});
         res.status(200).send('Status updated sucessfully');
     }catch(err){
         console.error(err);
@@ -36,17 +36,17 @@ app.post('/status',async (req, res) => {
 });
 
 app.get('/status',async (req, res) => {
-    const {vehiclenumber}=req.query;
+    const {vehicalnumber}=req.query;
     try{
-        const Vehicle=await trackStatus.findOne({vehiclenumber});
-        if(Vehicle){
-            res.status(200).json(Vehicle);
+        const Vehical=await trackStatus.findOne({vehicalnumber});
+        if(Vehical){
+            res.status(200).json(Vehical);
         }else{
-            res.status(404).send('Vehicle not found')
+            res.status(404).send('Vehical not found')
         }
     }catch(err){
         console.error(err);
-        res.status(500).send ('Failed to find vehicle');
+        res.status(500).send ('Failed to find vehical');
     }
 });
 
