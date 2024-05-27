@@ -2,13 +2,13 @@ const bodyParser = require('body-parser');
 const express = require('express');
 const { registerdetails, trackStatus } = require('./db/user');
 const app = express()
-const PORT = process.env.PORT || 3006;
+const PORT = process.env.PORT || 3008;
 
 //Middlewares
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
 
-let Vehicals ={};
+
 // TODO ENDPOINTS
 app.post('/Register', async(req, res) => {
     const  {holdername,vehicalnumber,chassisnumber,insurancenumber,licensenumber}= req.body;
