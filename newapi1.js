@@ -8,61 +8,54 @@ const PORT = process.env.PORT || 3005;
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
 
+let Vehicals ={};
 // TODO ENDPOINTS
-app.post('/Register', async (req, res) => {
-    const  body= req.body;
+app.post('/Register', (req, res) => {
+    const  {holdername,vehicalnumber,chassisnumber,insurancenumber,licensenumber}= req.body;
 
-    const register = await registerdetails.create({
-        holdername: body.holdername,
-        vehicalnumber: body.vehicalnumber,
-        chassisnumber: body.chassisnumber,
-        insurancenumber: body.insurancenumber,
-        licensenumber: body.licensenumber,
-    });
-
-    register ? res.status(201).json({msg: "Success", data: register}) : res.status(500).json({msg: "Error", data: register})
-})
+    if(Vehicals[vehicalnumber]){
+        res.status(409).send('Vehical already registered');
+    }else{
+        Vehicals[vehicalnumber]={holdername,chassisnumber,insurancenumber,licensenumber};
+        res.status(200).send('Vehical registered successfully')
+    }
+    
+});
 
 app.get("/", (req, res) => {
     res.end("Hello world")
 })
 
-app.post('/status', async (req, res) => {
-    const  body= req.body;
+app.post('/status', (req, res) => {
+    const  {vehicalnumber,engine,brake,healthstatus}= req.body;
+    if (Vehicals[vehicalnumber]){
+        Vehicals[vehicalnumber].engine=engine;
+        Vehicals[vehicalnumber].brake=brake;
+        Vehicals[vehicalnumber].healthstatus=healthstatus;
+        res.status(200).send('Status updated sucessfully');
+    }else{
+        res.status(404).send('Vehical not found')
+    }
+        
+});
 
-    const status = await trackStatus.create({
-        vehicalstatus: body.vehicalstatus,
-        engine: body.engine,
-        brake: body.brake,
-    });
-
-    status ? res.status(201).json({msg: "Success", data: status}) : res.status(500).json({msg: "Error", data: status})
-})
-
-app.get('/statusdata', async (req, res) => {
-    try {
-        // Fetch all users from the database
-        const statusdata = await trackStatus.find({});
-
-        res.json(statusdata);
-    } catch (error) {
-        console.error("Error while fetching users:", error);
-        res.status(500).json({ error: "Internal server error" });
+app.get('/status', (req, res) => {
+    const {vehicalnumber}=req.query;
+    if(Vehicals[vehicalnumber]){
+        const{holdername,chassisnumber,insurancenumber,licensenumber,engine,brake,healthstatus}=Vehicals[vehicalnumber];
+        res.status(200).json({
+            holdername,
+            vehicalnumber,
+            chassisnumber,
+            insurancenumber,
+            licensenumber,
+            engine,
+            brake,
+            healthstatus
+        });
+    }else{
+        res.status(404).send ('Vehical not found');
     }
 });
 
-app.post("/login", (req, res) => {
-    const body = req.body;
-    const email = body.email;
-    const pass = body.pass;
-
-    if(email === "raji@gmail.com" && pass === guna07)
-        res.json({
-            data: "success",
-        })
-    else 
-        res.end("Incorrect creds")
-})
-
 app.listen(PORT, () => console.log(`Application listening on port ${PORT}!`))
-

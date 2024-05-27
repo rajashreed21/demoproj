@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const statusSchema = new mongoose.Schema({
     
-    vehicalstatus: {
+    vehicalnumber: {
         type: String,
     },
     engine: {
@@ -10,6 +10,9 @@ const statusSchema = new mongoose.Schema({
     },
     brake: {
         type: String,
+    },
+    healthstatus:{
+        type:String,
     }
 });
 
