@@ -38,9 +38,9 @@ app.post('/status',async (req, res) => {
 app.get('/status',async (req, res) => {
     const {vehiclenumber}=req.query;
     try{
-        const vehicle=await trackStatus.findOne({vehiclenumber});
-        if(vehicle){
-            res.status(200).json(vehicle);
+        const Vehicle=await trackStatus.findOne({vehiclenumber});
+        if(Vehicle){
+            res.status(200).json(Vehicle);
         }else{
             res.status(404).send('Vehicle not found')
         }
