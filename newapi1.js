@@ -23,10 +23,6 @@ app.post('/Register', async(req, res) => {
     
 });
 
-app.get("/", (req, res) => {
-    res.end("Hello world")
-})
-
 app.post('/status',async (req, res) => {
     const  {vehicalnumber,engine,brake,healthstatus}= req.body;
     try{
