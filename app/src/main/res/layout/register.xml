@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/img"
+    android:padding="16dp"
+    tools:context=".Dashboard_Activity">
+
+    <TextView
+        android:layout_width="990dp"
+        android:layout_height="90dp"
+        android:text="Vehical Health Monitoring"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textColor="#80D8FF"/>
+
+    <LinearLayout
+        android:layout_width="990dp"
+        android:layout_height="990dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:hint="Holdername"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="20sp"
+            android:padding="16dp"
+            android:id="@+id/name"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:hint="Vehicle Number"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="20sp"
+            android:padding="16dp"
+            android:id="@+id/vehicleno"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:hint="Chassis Number"
+            android:textColor="@color/white"
+            android:textColorHint="#FAF9F9"
+            android:textSize="20sp"
+            android:padding="16dp"
+            android:id="@+id/chassisno"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:hint="Insurance Number"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="20sp"
+            android:padding="16dp"
+            android:id="@+id/insuranceno"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:hint="License Number"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="20sp"
+            android:padding="16dp"
+            android:id="@+id/licenseno"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Register"
+            android:backgroundTint="@color/white"
+            android:textColor="#3B84F1"
+            android:padding="18dp"
+            android:layout_marginTop="36dp"
+            android:textSize="20sp"
+            android:id="@+id/register_btn"/>
+
+
+    </LinearLayout>
+
+</RelativeLayout>

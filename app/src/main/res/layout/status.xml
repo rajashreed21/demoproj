@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/img">
+
+    <LinearLayout
+        android:id="@+id/listtask"
+        android:layout_width="887dp"
+        android:layout_height="887dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/statusview"
+            android:layout_width="238dp"
+            android:layout_height="252dp"
+            android:padding="18dp"
+            android:textColor="@color/white"
+            android:textSize="23dp"
+            tools:layout_editor_absoluteX="77dp"
+            tools:layout_editor_absoluteY="128dp" />
+
+
+        <Button
+            android:id="@+id/home_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Home"
+            tools:layout_editor_absoluteX="143dp"
+            tools:layout_editor_absoluteY="473dp" />
+
+    </LinearLayout>
+</RelativeLayout>
+
