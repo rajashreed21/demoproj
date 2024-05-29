@@ -40,7 +40,9 @@ app.post('/device', async (req, res) => {
         res.status(400).send(err.message);
     }
 });
-
+app.get("/hello", (req, res) => {
+    res.end("Hello world welcom all")
+})
 // Retrieve device status
 app.get('/room/device/:devicename', async (req, res) => {
     try {
